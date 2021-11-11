@@ -1,6 +1,7 @@
 <?php
 
 echo "<link rel='stylesheet' href='stylesheet.css'>";
+echo "<link rel='stylesheet' href='query_stylesheet.css'>";
 
 $servername = "cssql.seattleu.edu";
 $username = "ll_wmccormick";
@@ -17,7 +18,7 @@ if (!$conn) {
 
 $sql = $_POST["query"];
 
-echo "QUERY: " . $_POST["query"] . "<br>";
+echo "<h1>QUERY: " . $_POST["query"] . "</h1><br>";
 
 $result = mysqli_query($conn, $sql);
 
