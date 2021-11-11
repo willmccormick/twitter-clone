@@ -1,6 +1,7 @@
 <?php
 
-function tableFromQuery($query){
+//gets the query from the database and create a string that will create the necessary html
+function htmlTableFromQuery($query){
     
     //put your seattle u name here
     $seattleu = "wmccormick";
@@ -61,8 +62,18 @@ function tableFromQuery($query){
     return $html;
 }
 
-echo "<link rel='stylesheet' href='stylesheet.css'>";
-echo "<link rel='stylesheet' href='query_stylesheet.css'>";
+function htmlFromQuery($query){
+    
+    $html;
+    
+    $html = $html . "<link rel='stylesheet' href='stylesheet.css'>";
+    $html = $html . "<link rel='stylesheet' href='query_stylesheet.css'>";
 
-echo tableFromQuery($_POST["query"]);
+    $html = $html . htmlTableFromQuery($query);
+    
+    return $html;
+}
+
+echo htmlFromQuery($_POST["query"]);
+
 ?> 

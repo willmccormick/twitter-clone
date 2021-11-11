@@ -15,19 +15,49 @@
             <div class = "bullet" id = "relation">
                 <b>Relations:</b>
                 <ol>
-                    <li><a href="poster.html" target="_blank">Poster</a> </li>
-                    <li><a href="template.html#">Observers</a></li>
-                    <li><a href="template.html#">Posts</a></li>
-                    <li><a href="template.html#">Repost</a></li>
-                    <li><a href="template.html#">Reply</a></li>
-                    <li><a href="template.html#">Content</a></li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM POSTER">
+                            <input type="submit" value="Poster">
+                        </form>
+                    </li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM OBSERVER">
+                            <input type="submit" value="Observer">
+                        </form>
+                    </li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM POST">
+                            <input type="submit" value="Posts">
+                        </form>
+                    </li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM REPOST">
+                            <input type="submit" value="Reposts">
+                        </form>
+                    </li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM REPLY">
+                            <input type="submit" value="Reply">
+                        </form>
+                    </li>
+                    <li>
+                        <form action="query.php" method="POST">
+                            <input type="hidden" name="query" value="SELECT * FROM CONTENT">
+                            <input type="submit" value="Content">
+                        </form>
+                    </li>
                 </ol>
             </div>
             <div class = "bullet" id = "query">
                 <b>Queries:</b>
                 <ol>
                     <li><a href="template.html#">Query1</a>: Displays the post and the poster that posted it.</li>
-                    <li><a href="template.html#">Query2</a>: Displays the number of followers each user has and the number of userers they are following. </li>
+                    <li><a href="template.html#">Query2</a>: Displays the number of followers each user has and the number of users they are following. </li>
                     <li><a href="template.html#">Query3</a>: Displays all the users who have made at least one post.</li>
                     <li><a href="template.html#">Query4</a>: Displays the number of replies to each post.</li>
                     <li><a href="template.html#">Query5</a>: Displays the content of each post.</li>
