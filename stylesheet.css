@@ -1,9 +1,9 @@
 * { 
-    padding: 0; margin: 0; 
-}
-html {
-    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    font-size: 1vw;
     font-family: sans-serif;
+    border: 0;
 }
 h1 {
     font-size: 4vw;
@@ -11,8 +11,26 @@ h1 {
 ol {
     padding-left: 1.5vw;
 }
-form{
-    border-width: 5px;
+input[type=text] {
+    border: 0;
+    height: 1vw;
+}
+input[type=submit], input[type=reset] {
+    padding: 2;
+}
+.box{
+    background-color: lightgray;
+}
+.wannabeHyperLink {
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+.bullet{
+    margin-left: 1vw;
+    padding: .5vw
 }
 #header{
     margin: 1vw;
@@ -32,10 +50,4 @@ form{
 }
 #adhoc {
     
-}
-
-.bullet{
-    background-color: lightgray;
-    margin-left: 1vw;
-    padding: .5vw
 }
