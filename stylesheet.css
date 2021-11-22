@@ -5,9 +5,6 @@
     font-family: sans-serif;
     border: 0;
 }
-h1 {
-    font-size: 4vw;
-}
 ol {
     padding-left: 1.5vw;
 }
@@ -19,7 +16,7 @@ input[type=submit], input[type=reset] {
     padding: 2;
 }
 .box{
-    background-color: lightgray;
+    background-color: lavender;
 }
 .wannabeHyperLink {
     border: 0;

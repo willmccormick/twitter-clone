@@ -12,3 +12,12 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+#query {
+    font-size: 4vw;
+    text-align: justify;
+}
+#query:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
