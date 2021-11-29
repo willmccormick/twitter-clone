@@ -4,7 +4,7 @@
 function htmlTableFromQuery($query){
     
     //put your seattle u name here
-    $seattleu = "wmccormick";
+    $seattleu = "dsambotin";
     
     //used to access database
     $servername = "cssql.seattleu.edu";
@@ -24,7 +24,14 @@ function htmlTableFromQuery($query){
     }
 
     //states the query at the top of the page
-    $html = $html . "<h1>QUERY: " . $query . "</h1><br>";
+    $html = $html . "<div id = 'query'>QUERY: " . $query . "</div>";
+
+	//validate that it is valid query 
+	$query_copy = strtolower($query);
+	$tok = strtok($query_copy, "select");
+	if(!$tok) {
+		die("Invalid select command");
+	}
 
     //gets the result of a query
     $result = mysqli_query($conn, $query);
