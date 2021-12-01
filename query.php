@@ -23,9 +23,17 @@ function htmlTableFromQuery($query){
         die("Connection failed: " . mysqli_connect_error());
     }
 
+	//validate that it is valid query 
+	$query_copy = strtolower($query);
+	$tok = strtok($query_copy, "select");
+	if(!$tok) {
+		die("Invalid select command");
+	}
+
     //states the query at the top of the page
     $html = $html . "<div id = 'query'>QUERY: " . $query . "</div>";
 
+	
     //gets the result of a query
     $result = mysqli_query($conn, $query);
 
@@ -76,4 +84,4 @@ function htmlFromQuery($query){
 
 echo htmlFromQuery($_POST["query"]);
 
-?> 
+?>
