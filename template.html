@@ -57,35 +57,36 @@
                 <b>Queries:</b>
                 <ol>
                     <li>
-                        <form action="query.php" method="POST">
+                        <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value=
                                 "SELECT POST.POST_ID, POSTER.USER_HANDLE
                                  FROM (POST INNER JOIN POSTER ON POST.USER_HANDLE = POSTER.USER_HANDLE);">
                             <input type="submit" value="Posts" class = "wannabeHyperLink box">
+                             <p>: Displays the post and the poster that posted it.</p>
                         </form>
-                        <p>: Displays the post and the poster that posted it.</p>
+                       
                     </li>
                     <li>
-                        <form action="query.php" method="POST">
+                        <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value= 
                                 "SELECT USER_HANDLE, (count(distinct FOLLOWER_HANDLE) ) AS FOLLOWERS_COUNT
                                 FROM OBSERVER
                                 GROUP BY USER_HANDLE;">
                             <input type="submit" value="Followings" class = "wannabeHyperLink box">
+                            <p>: Displays the number of followers each user has and the number of users they are following.</p>
                         </form>
-                        <p>: Displays the number of followers each user has and the number of users they are following.</p>
                     </li>
                     <li>
-                        <form action="query.php" method="POST">
+                        <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value=
                                 "SELECT USER_HANDLE, USER_NAME FROM POSTER
                                 WHERE USER_HANDLE IN (SELECT DISTINCT USER_HANDLE FROM POST WHERE (select COUNT(POST_ID) > 0));">
                             <input type="submit" value="Posters" class = "wannabeHyperLink box">
+                            <p>: Displays all the users who have made at least one post. </p>
                         </form>
-                        <p>: Displays all the users who have made at least one post. </p>
                     </li>
                     <li>
-                        <form action="query.php" method="POST">
+                        <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value=
                                 "SELECT ORIGNIAL_POST_ID, COUNT(REPLY_ID)
                                 FROM REPLY
@@ -93,19 +94,19 @@
                                 HAVING COUNT(REPLY_ID) > 0
                                 ORDER BY COUNT(REPLY_ID) DESC;">
                             <input type="submit" value="Replies" class = "wannabeHyperLink box">
+                            <p>: Displays the number of replies to each post.</p>
                         </form>
-                        <p>: Displays the number of replies to each post.</p>
                     </li>
                     <li>
-                        <form action="query.php" method="POST">
+                        <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value=
                                 "SELECT CONTENT_ID, POST.POST_ID, USER_HANDLE, POST_DATE_TIME, PLACEMENT
                                  FROM POST
                                  LEFT JOIN CONTENT
                                  ON POST.POST_ID = CONTENT.POST_ID;">
                             <input type="submit" value="Content" class = "wannabeHyperLink box">
+                            <p>: Displays the content of each post.</p>
                         </form>
-                        <p>: Displays the content of each post.</p>
                     </li>
                 </ol>
             </div>
@@ -115,7 +116,7 @@
                     <table>
                         <tr>
                             <td align="right">
-                                <strong>Please enter your query here<br></strong>
+                                <strong>Please enter your query here: <br></strong>
                             </td>
                             <td>
                                 <input size="30" name="query" type="text">
@@ -123,10 +124,10 @@
                         </tr>
                         <tr>
                             <td align="right">
-                                <input value="Clear" type="reset">
+                                <input value="Clear" type="reset" class = "inverse">
                             </td>
                             <td>
-                                <input value="Submit" type="submit">
+                                <input value="Submit" type="submit" class = "inverse">
                             </td>
                         </tr>
                     </table>
