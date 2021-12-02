@@ -13,11 +13,6 @@ table {
     border-collapse: collapse;
 }
 #query {
-    font-size: 2vw;
-    text-align: center;
-}
-#query:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
+    font-size: 4vw;
+    text-transform: uppercase;
 }

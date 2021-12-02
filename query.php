@@ -24,10 +24,10 @@ function htmlTableFromQuery($query){
     }
 
 	//validate that it is valid query 
-	$query_copy = strtolower($query);
-	$tok = strtok($query_copy, "select");
-	if(!$tok) {
-		die("Invalid select command");
+	$query_copy_select = strtolower($query);
+	$tok_select = strtok($query_copy_select, " ");
+	if($tok_select != "select") {
+		die("Invalid command");
 	}
 
     //states the query at the top of the page
@@ -78,6 +78,8 @@ function htmlFromQuery($query){
     $html = $html . "<link rel='stylesheet' href='query_stylesheet.css'>";
 
     $html = $html . htmlTableFromQuery($query);
+    
+    $html = $html . "<script type='text/javascript' src='header.js'></script>";
     
     return $html;
 }

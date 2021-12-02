@@ -69,7 +69,7 @@
                     <li>
                         <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value= 
-                                "SELECT USER_HANDLE, (count(distinct FOLLOWER_HANDLE) ) AS FOLLOWERS_COUNT
+                                "SELECT USER_HANDLE, (COUNT(DISTINCT FOLLOWER_HANDLE) ) AS FOLLOWERS_COUNT
                                 FROM OBSERVER
                                 GROUP BY USER_HANDLE;">
                             <input type="submit" value="Followings" class = "wannabeHyperLink box">
@@ -80,7 +80,7 @@
                         <form action="query.php" method="POST" class = "queryform">
                             <input type="hidden" name="query" value=
                                 "SELECT USER_HANDLE, USER_NAME FROM POSTER
-                                WHERE USER_HANDLE IN (SELECT DISTINCT USER_HANDLE FROM POST WHERE (select COUNT(POST_ID) > 0));">
+                                WHERE USER_HANDLE IN (SELECT  USER_HANDLE FROM POST GROUP BY USER_HANDLE HAVING (COUNT(POST_ID) > 0));">
                             <input type="submit" value="Posters" class = "wannabeHyperLink box">
                             <p>: Displays all the users who have made at least one post. </p>
                         </form>
