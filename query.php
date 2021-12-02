@@ -79,6 +79,8 @@ function htmlFromQuery($query){
 
     $html = $html . htmlTableFromQuery($query);
     
+    $html = $html . "<script type='text/javascript' src='header.js'></script>";
+    
     return $html;
 }
 

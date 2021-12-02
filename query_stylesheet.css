@@ -14,10 +14,6 @@ table {
 }
 #query {
     font-size: 4vw;
-    text-align: justify;
-}
-#query:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
 }
