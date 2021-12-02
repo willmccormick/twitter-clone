@@ -4,7 +4,7 @@
 function htmlTableFromQuery($query){
     
     //put your seattle u name here
-    $seattleu = "dsambotin";
+    $seattleu = "wmccormick";
     
     //used to access database
     $servername = "cssql.seattleu.edu";
@@ -23,9 +23,6 @@ function htmlTableFromQuery($query){
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    //states the query at the top of the page
-    $html = $html . "<div id = 'query'>QUERY: " . $query . "</div>";
-
 	//validate that it is valid query 
 	$query_copy = strtolower($query);
 	$tok = strtok($query_copy, "select");
@@ -33,6 +30,10 @@ function htmlTableFromQuery($query){
 		die("Invalid select command");
 	}
 
+    //states the query at the top of the page
+    $html = $html . "<div id = 'query'>QUERY: " . $query . "</div>";
+
+	
     //gets the result of a query
     $result = mysqli_query($conn, $query);
 
@@ -83,4 +84,4 @@ function htmlFromQuery($query){
 
 echo htmlFromQuery($_POST["query"]);
 
-?> 
+?>
