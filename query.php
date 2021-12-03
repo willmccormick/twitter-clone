@@ -23,12 +23,12 @@ function htmlTableFromQuery($query){
         die("Connection failed: " . mysqli_connect_error());
     }
 
-	//validate that it is valid query 
-	$query_copy_select = strtolower($query);
-	$tok_select = strtok($query_copy_select, " ");
-	if($tok_select != "select") {
-		die("Invalid command");
-	}
+	//validate that it is valid query - not necessar 
+	//$query_copy_select = strtolower($query);
+	//$tok_select = strtok($query_copy_select, " ");
+	//if($tok_select != "select") {
+	//	die("Invalid command");
+	//}
 
     //states the query at the top of the page
     $html = $html . "<div id = 'query'>QUERY: " . $query . "</div>";
